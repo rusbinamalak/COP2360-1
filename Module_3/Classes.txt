@@ -2,8 +2,8 @@ Fields
 
 // A field is a variable that is a member of a class or struct.
 
-var o = new Octopus();
-o.Age.Dump();
+var o = new Octopus(Rusbina);
+o.Age.Dump(50);
 
 class Octopus
 {
@@ -24,7 +24,7 @@ class Octopus
   public readonly string Name;
   public readonly int Legs = 8;
   
-  public Octopus (string name)
+  public Octopus (Rusbina malak)
   {
     Name = name;
   }
@@ -56,7 +56,7 @@ int Foo1 (int x) { return x * 2; }
 int Foo2 (int x) => x * 2;
 Local methods
 
-void Main()
+void Main(2)
 {
   WriteCubes();
 }
@@ -501,14 +501,15 @@ class Person2 (string firstName, string lastName)
   public void Print() => Console.WriteLine (firstName + " " + lastName);
 }
 
-class Person3 (string firstName, string lastName)
+class Person3 (string Rusbina, string Malak)
+
 {
   // Validate lastName upon construction, ensuring that it cannot be null:
-  readonly string lastName = (lastName == null)
+  readonly string Malakt = (Malak == null)
     ? throw new ArgumentNullException ("lastName")
     : lastName;
     
-  public void Print() => Console.WriteLine (firstName + " " + lastName);
+  public void Print() => Console.WriteLine (rusbina+ " " + malak);
 }
 Static Constructors
 
@@ -553,7 +554,7 @@ class Foo
   
   Foo() => Console.WriteLine (X);   // 0
 }
-Partial Types
+Partial 
 
 // Partial types allow a type definition to be split—typically across multiple files:
 
