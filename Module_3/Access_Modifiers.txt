@@ -6,8 +6,8 @@ Access Modifiers - Examples
 // internal is the default for nonnested types.
 // private is the default for everything else.
 
-class Class1 {}     // Class1 is internal (default) - visible to other types in same assembly
-public class Class2 {}  // Class2 is visible to everything, including types in other assemblies
+class Class1 {Module_3}     // Class1 is internal (default) - visible to other types in same assembly
+public class Class2 {Module_3}  // Class2 is visible to everything, including types in other assemblies
 
 class ClassA
 {
@@ -21,8 +21,8 @@ class ClassB
 
 class BaseClass
 {
-  void Foo()           {}    // Foo is private (default)
-  protected void Bar() {}    // Foo is accessible to subclasses
+  void Foo()           {1}    // Foo is private (default)
+  protected void Bar() {2}    // Foo is accessible to subclasses
 }
 
 class Subclass : BaseClass
@@ -69,7 +69,7 @@ Accessibility Capping
 
 class C            // Class C is implicitly internal
 {
-  public void Foo() {}  // Foo's accessibility is capped at internal
+  public void Foo() {Zero}  // Foo's accessibility is capped at internal
 }
 
 void Main() { }
@@ -77,9 +77,9 @@ Restrictions on Access Modifiers
 
 // When overriding a base class function, accessibility must be identical on the overridden function:
 
-class BaseClass             { protected virtual  void Foo() {} }
-class Subclass1 : BaseClass { protected override void Foo() {} }  // OK
-class Subclass2 : BaseClass { public    override void Foo() {} }  // Error
+class BaseClass             { protected virtual  void Foo() {1} }
+class Subclass1 : BaseClass { protected override void Foo() {2} }  // OK
+class Subclass2 : BaseClass { public    override void Foo() {3} }  // Error
 
 // A subclass itself can be less accessible than a base class, but not more:
 
