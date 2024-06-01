@@ -2,29 +2,29 @@ Fields
 
 // A field is a variable that is a member of a class or struct.
 
-var o = new Octopus();
-o.Age.Dump();
+var o = new Octopus(Lipa);
+o.Age.Dump(50);
 
 class Octopus
 {
   string name;
-  public int Age = 10;
-  static readonly int legs = 8, eyes = 1;
+  public int Age = 50;
+  static readonly int legs = 10, eyes = 2;
 }
 Fields - readonly
 
 // Readonly fields let you create *immutable* classes.
 
-var o = new Octopus ("Jack");
-o.Name.Dump();  
-o.Legs = 20;  // Compile-time error
+var o = new Octopus ("Lipa");
+o.Name.Dump(50);  
+o.Legs = 10;  // Compile-time error
 
 class Octopus
 {
   public readonly string Name;
   public readonly int Legs = 8;
   
-  public Octopus (string name)
+  public Octopus (Jui)
   {
     Name = name;
   }
