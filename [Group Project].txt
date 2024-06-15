@@ -1,0 +1,46 @@
+/*We're making a project about items on a shelf
+ Say there are 5 total spaces for items
+*/
+using System;
+using System.Collections;
+
+//Posistions and Items on the shelf
+Dictionary<int, string> shelf = new Dictionary<int, string>
+ {
+    { 1,"keys" },
+    { 2,"wallet" },
+    { 3,"glasses" },
+    { 4,"pencil" },
+    { 5,"phone" }
+};
+//Remove an Item from the shelf
+Console.WriteLine("I need something from the shelf");
+string item = Console.ReadLine();
+switch(item)
+{
+    case "keys":
+        shelf.Remove(1);
+        break;
+    case "wallet":
+        shelf.Remove(2);
+        break;
+    case "glasses":
+        shelf.Remove(3);
+        break;
+    case "pencil":
+        shelf.Remove(4);
+        break;
+    case "phone":
+        shelf.Remove(5);
+        break;
+    default:
+        Console.WriteLine("That's not on the self. It might be in the car");
+        break;
+}
+//Displays Remaining items on the shelf
+foreach (KeyValuePair<int, string> kvp in shelf)
+{ 
+Console.WriteLine($"Posistion: {kvp.Key} Item: {kvp.Value}");
+}
+Console.ReadLine();
+
